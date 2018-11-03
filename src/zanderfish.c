@@ -60,10 +60,10 @@ void gen_sbox(unsigned char * key, int keylen) {
     }
     for (s = 0; s < 4; s++) {
         for (i = 0; i < 256; i++) {
-	    j = (j + key[i % keylen]) & 0xFF;
-	    temp = S[s][i];
+            j = (j + key[i % keylen]) & 0xFF;
+            temp = S[s][i];
             S[s][i] = S[s][j];
-	    S[s][j] = temp;
+            S[s][j] = temp;
         }
     }
 }
@@ -100,9 +100,9 @@ uint32_t block_encrypt(uint32_t *xl, uint32_t *xr) {
         Xr = Xr ^ K[i];
         Xl = Xl ^ F(Xr);
 
-	temp = Xl;
-	Xl = Xr;
-	Xr = temp;
+        temp = Xl;
+        Xl = Xr;
+        Xr = temp;
 
     }
     temp = Xl;
@@ -125,9 +125,9 @@ uint32_t block_decrypt(uint32_t *xl, uint32_t *xr) {
         Xl = Xl ^ F(Xr);
         Xr = Xr ^ K[i];
 
-	temp = Xl;
-	Xl = Xr;
-	Xr = temp;
+        temp = Xl;
+        Xl = Xr;
+        Xr = temp;
 
     }
     temp = Xl;

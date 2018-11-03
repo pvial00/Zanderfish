@@ -104,9 +104,9 @@ uint32_t block_encrypt(uint32_t *xl, uint32_t *xr) {
         Xr = Xr ^ K[i];
         Xl = Xl ^ F(Xr);
 
-	temp = Xl;
-	Xl = Xr;
-	Xr = temp;
+        temp = Xl;
+        Xl = Xr;
+        Xr = temp;
 
     }
     temp = Xl;
@@ -129,9 +129,9 @@ uint32_t block_decrypt(uint32_t *xl, uint32_t *xr) {
         Xl = Xl ^ F(Xr);
         Xr = Xr ^ K[i];
 
-	temp = Xl;
-	Xl = Xr;
-	Xr = temp;
+        temp = Xl;
+        Xl = Xr;
+        Xr = temp;
 
     }
     temp = Xl;
